@@ -38,7 +38,7 @@ def base_datas():
     # print("训练集特征值和目标值：", x_train, y_train)
     # print("测试集特征值和目标值：", x_test, y_test)
 
-    # 下面是比较大的数据，需要下载一会
+    # 下面是比较大的数据
     # news = fetch_20newsgroups(subset='all', data_home='data')
     # # print(news.feature_names)  #这个没有
     # print(news.DESCR)
@@ -59,8 +59,6 @@ def base_datas():
     print(lb.DESCR)
     print(lb.feature_names)
     print('-' * 50)
-    # 回归问题没这个
-    # print(lb.target_names)
 
 
 def knncls():
@@ -154,7 +152,7 @@ def knncls():
     x_train = std.fit_transform(x_train)
     gc.fit(x_train, y_train)
     x_test = std.transform(x_test)
-    # 预测准确率，为了给大家看看
+    # 预测准确率
     print("在测试集上准确率：", gc.score(x_test, y_test))
 
     print("在交叉验证当中最好的结果：", gc.best_score_)
@@ -200,7 +198,7 @@ def naviebayes():
 
     print("预测的文章类别为：", y_predict)
 
-    # 得出准确率,这个是很难提高准确率，为什么呢？
+    # 得出准确率
     print("准确率为：", mlt.score(x_test, y_test))
     # 目前这个场景我们不需要召回率，support是划分为那个类别的有多少个样本
     print("每个类别的精确率和召回率：", classification_report(y_test, y_predict, target_names=news.target_names))

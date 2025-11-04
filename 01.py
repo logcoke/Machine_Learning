@@ -9,8 +9,6 @@ from sklearn.impute import SimpleImputer
 
 
 # 特征抽取
-#
-
 
 def dictvec():
     """
